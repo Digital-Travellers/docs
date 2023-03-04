@@ -1,0 +1,4 @@
+# ignore configuration files
+babel.config.js
+docusaurus.config.js
+sidebars.js

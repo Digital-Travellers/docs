@@ -36,7 +36,6 @@
     "react/jsx-props-no-spreading": [0],
     "react/require-default-props": [0],
     "import/prefer-default-export": ["off"],
-    "import/no-default-export": ["error"],
     "import/no-unresolved": [
       2,
       { "ignore": ["^@theme", "^@docusaurus", "^@site"] }

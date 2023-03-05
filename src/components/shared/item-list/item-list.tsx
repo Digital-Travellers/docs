@@ -10,12 +10,17 @@ type Item = {
 } & ({ to: string; href?: never } | { href: string; to?: never });
 
 type ItemListProps = {
+  withSidebar?: boolean;
   items: Item[];
 };
 
-export const ItemList = ({ items }: ItemListProps) =>
+export const ItemList = ({ items, withSidebar }: ItemListProps) =>
   items.length ? (
-    <div className="grid grid-cols-1 gap-3 lg:grid-cols-3 lg:gap-8 md:grid-cols-2 md:gap-6 mb-8">
+    <div
+      className={`grid grid-cols-1 gap-3 lg:grid-cols-${
+        withSidebar ? '2' : '3'
+      } lg:gap-8 md:grid-cols-2 md:gap-6 mb-8`}
+    >
       {items.map(({ title, description, to, href }) => (
         <div
           id={to}

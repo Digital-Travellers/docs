@@ -1,9 +1,21 @@
 import React from 'react';
 
-type TextProps = {
-  content: React.ReactNode;
+type BaseProps = {
+  noMargin?: boolean;
 };
 
-export const Text = ({ content }: TextProps): JSX.Element => (
-  <p className="text-gray-700">{content}</p>
+type TextProps = BaseProps &
+  (
+    | { content?: React.ReactNode; children?: never }
+    | { content?: never; children: React.ReactNode }
+  );
+
+export const Text = ({
+  content,
+  children,
+  noMargin,
+}: TextProps): JSX.Element => (
+  <p className={`text-gray-700 ${noMargin ? '!m-0' : ''}`}>
+    {content ?? children}
+  </p>
 );

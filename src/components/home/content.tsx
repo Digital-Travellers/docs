@@ -1,5 +1,4 @@
-import Link from '@docusaurus/Link';
-import { H1, H3, ItemList, Container } from '@site/src/components/shared';
+import { H1, H3, ItemList, Container, Link } from '@site/src/components/shared';
 
 import React from 'react';
 

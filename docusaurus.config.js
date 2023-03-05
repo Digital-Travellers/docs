@@ -44,6 +44,9 @@ const config = {
           editUrl:
             'https://github.com/digital-travellers/docs/tree/main/packages/create-docusaurus/templates/shared/',
         },
+        theme: {
+          customCss: require.resolve('./src/css/base.css'),
+        },
       }),
     ],
   ],
@@ -115,6 +118,19 @@ const config = {
         darkTheme: darkCodeTheme,
       },
     }),
+  plugins: [
+    async function TailwindCSSPlugin(_, __) {
+      return {
+        name: 'docusaurus-tailwindcss',
+        configurePostCss(postcssOptions) {
+          // Appends TailwindCSS and AutoPrefixer.
+          postcssOptions.plugins.push(require('tailwindcss'));
+          postcssOptions.plugins.push(require('autoprefixer'));
+          return postcssOptions;
+        },
+      };
+    },
+  ],
 };
 
 module.exports = config;

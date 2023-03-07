@@ -6,7 +6,7 @@ type BaseProps = {
 
 type TextProps = BaseProps &
   (
-    | { content?: React.ReactNode; children?: never }
+    | { content: string; children?: never }
     | { content?: never; children: React.ReactNode }
   );
 
@@ -15,7 +15,7 @@ export const Text = ({
   children,
   noMargin,
 }: TextProps): JSX.Element => (
-  <p className={`text-gray-700 ${noMargin ? '!m-0' : ''}`}>
+  <p className={`text-neutral-700 ${noMargin ? '!m-0' : ''}`}>
     {content ?? children}
   </p>
 );

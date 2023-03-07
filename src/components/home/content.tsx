@@ -34,13 +34,13 @@ export const Content = (): JSX.Element => (
         {
           title: 'Working agreements',
           description: 'Our organization working agreements!',
-          to: '/agreements',
+          to: '/docs/working-agreements',
         },
         {
           title: 'Modifying the docs',
           description:
             'Want to change anything? Read this to have a clearer idea!',
-          to: '/improving-our-docs',
+          to: '/docs/improving-our-docs',
         },
       ]}
     />

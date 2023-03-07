@@ -28,6 +28,11 @@ const sidebars = {
           id: 'team/working-agreements',
           label: 'Working agreements',
         },
+        {
+          type: 'doc',
+          id: 'team/contribution',
+          label: 'Contribution',
+        },
       ],
     },
     {

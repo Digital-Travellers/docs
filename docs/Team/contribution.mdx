@@ -1,0 +1,149 @@
+---
+title: Contributing to the docs 
+hide_title: true
+slug: /docs-contribution
+---
+
+import { H1, H2, H3, H4, Link } from '@site/src/components';
+
+<H1 content="Contributing to the documentation" />
+
+<Text>
+  The documentation is written using the docusaurus, a static-site generator
+  that uses React under the hood (while allowing us to use React aswell). No
+  only that, but has many benefits and utilities so that teams can develop
+  proper documentation.
+</Text>
+<br />
+
+:::info
+  <Text>
+    If you haven't heard about docusaurus, make sure to give a read to their
+    docs: <Link href="https://www.docusaurus.io">Docusaurus docs</Link>
+  </Text>
+:::
+
+<H2 content="React and markdown" />
+
+<H3 content="Component based docs" />
+
+<Text>
+  A good thing about docusaurus is that allows you to use React inside Markdown
+  (in <code>.mdx</code> files). This allows us to have a more flexible
+  documentation, but it is also a challenge for use to keep the style equal on
+  each page.
+  <br />
+</Text>
+<br />
+<Text>
+  With this in mind, the structure of this repository has been set so that
+  documentation pages are written using the little system design of components
+  that resides inside <code>@src/components/shared</code>.  
+  The goal of this folder is to store the components that are reusable all
+  around the documentation, such as the headers, this text that you are reading
+  and so on.
+  Also, the goal is that it has a similar look to what the front-end application
+  will look, in order to have a more unified style. At the same time, it is
+  important that, whenever a member modifies a component or creates one, such
+  changes are reflected in the documentation.
+</Text>
+<br />
+<Text>
+  In order to style the components, this project uses TailwindCSS, which lighter
+  and efficient way of using CSS. You can find more information in their{' '}
+  <Link href="https://www.tailwind.css/docs">documentation</Link>.
+</Text>
+
+<H3 content="Component API" />
+
+:::tip
+  <Text>
+    Save the link so that you know where to find the API of the different
+    components that can be used.
+  </Text>
+:::
+
+<H4 content="Container" />
+
+<Text>
+  Used to display content in a limited responsive page, mostly used in pages,
+  not in <code>doc</code> filetypes.
+</Text>
+<br />
+
+| Prop name | Description | Type | Default |
+|---|---|---|---|
+| `children` | | `React.ReactNode` | `undefined` |
+
+<H4 content="Headers" />
+
+<Text>
+  Set of headers that share the same props. From <code>H1</code> to
+  <code>H5</code>, which correspond to the <code>h1</code> to <code>h5</code>
+  html headers.
+</Text>
+<br />
+
+| Prop name | Description | Type | Default |
+|---|---|---|---|
+| `content` | Text displayed as the header | `string` | `undefined` |
+
+<H4 content="ItemList" />
+
+<Text>
+  List of items that are used to display a set of elements.
+</Text>
+<br />
+
+| Prop name | Description | Type | Default |
+|---|---|---|---|
+| `items` | List of items to display | `Item[]` | `required` |
+| `withSidebar` | Whether the list is displayed alongside the sidebar | `boolean` | `false` |
+
+<Text>
+  The <code>Item</code> type has the following structure:
+</Text>
+<br />
+
+| Prop name | Description | Type | Default |
+|---|---|---|---|
+| `title` | Title of the item | `string` | `required` |
+| `description` | Description of the item. Not displayed if `undefined` | `string` | `undefined` |
+| `to` | Relative URL passed to the `Link` component. Should not exist if `href` is defined | `string ⎮ never` | `undefined` |
+| `href` | External URL passed to the `Link` component. Should not exist if `to` is defined | `string ⎮ never` | `undefined` | 
+
+<H4 content="Link" />
+
+<Text>
+  Wrapper around the <code>Link</code> from docusaurus. It has the same props as
+  the <code>@docusaurus/Link</code>.
+</Text>
+<br />
+
+| Prop name | Description | Type | Default |
+|---|---|---|---|
+| `isTitle` | Adds title styling | `boolean` | `false` |
+
+:::info
+<Text>
+  Make sure you read through the <Link href="https://www.docusaurus.io/docs/docusaurus-core#link">
+    <code>@docusaurus/Link</code>
+  </Link> documentation.
+</Text>
+:::
+
+<H4 content="Text" />
+
+<Text>
+  Component to display text in following the docs styles. Content can be passed
+  through the <code>content</code> property or as a <code>children</code>, which
+  allows more flexibility on what to display.
+</Text>
+<br />
+
+| Prop name | Description | Type | Default |
+|---|---|---|---|
+| `content` | String to be displayed | `string` | `undefined` |
+| `children` | Flexible alternative to `content` | `React.ReactNode` | `undefined` |
+| `noMargin` | Disabled the `margin` | `boolean` | `false` |
+

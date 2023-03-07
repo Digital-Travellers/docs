@@ -12,11 +12,11 @@ export const Link: React.FC<LinkComponentProps & LinkProps> = ({
 }) => (
   <LinkComponent
     {...props}
-    className={`hover:text-${
-      isTitle ? 'gray' : 'green'
-    }-700 hover:decoration-wavy`}
-    activeClassName={`hover:text-${
-      isTitle ? 'gray' : 'green'
-    }-700 hover:decoration-wavy`}
+    className={`hover:text-${isTitle ? 'gray' : 'green'}-700${
+      isTitle ? ' hover:decoration-wavy' : ''
+    }`}
+    activeClassName={`hover:text-${isTitle ? 'gray' : 'green'}-700${
+      isTitle ? ' hover:decoration-wavy' : ''
+    }`}
   />
 );

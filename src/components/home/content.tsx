@@ -40,7 +40,7 @@ export const Content = (): JSX.Element => (
           title: 'Modifying the docs',
           description:
             'Want to change anything? Read this to have a clearer idea!',
-          to: '/docs/improving-our-docs',
+          to: '/docs/contribution',
         },
       ]}
     />

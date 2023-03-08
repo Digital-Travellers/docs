@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkdigital_travellers=self.webpackChunkdigital_travellers||[]).push([[477],{4275:(e,t,l)=>{l.r(t),l.d(t,{Home:()=>n,default:()=>s});var i=l(2263),r=l(7676),a=l(7294);const n=()=>{const{siteConfig:e}=(0,i.Z)();return a.createElement(r.Z,{title:`Home - ${e.title}`,description:""},a.createElement("main",null))},s=n}}]);

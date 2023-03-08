@@ -39,13 +39,8 @@ const config = {
           editUrl:
             'https://github.com/digital-travellers/docs/tree/main/packages/create-docusaurus/templates/shared/',
         },
-        blog: {
-          showReadingTime: true,
-          editUrl:
-            'https://github.com/digital-travellers/docs/tree/main/packages/create-docusaurus/templates/shared/',
-        },
         theme: {
-          customCss: require.resolve('./src/css/custom.css'),
+          customCss: require.resolve('./src/css/base.css'),
         },
       }),
     ],
@@ -64,10 +59,15 @@ const config = {
         },
         items: [
           {
+            to: '/home',
+            position: 'left',
+            label: 'Home',
+          },
+          {
             type: 'doc',
             docId: 'intro',
             position: 'left',
-            label: 'Home',
+            label: 'Docs',
           },
           {
             href: 'https://github.com/digital-travellers',
@@ -84,7 +84,7 @@ const config = {
             items: [
               {
                 label: 'Home',
-                to: '/docs/intro',
+                to: '/home',
               },
             ],
           },
@@ -118,6 +118,19 @@ const config = {
         darkTheme: darkCodeTheme,
       },
     }),
+  plugins: [
+    async function TailwindCSSPlugin(_, __) {
+      return {
+        name: 'docusaurus-tailwindcss',
+        configurePostCss(postcssOptions) {
+          // Appends TailwindCSS and AutoPrefixer.
+          postcssOptions.plugins.push(require('tailwindcss'));
+          postcssOptions.plugins.push(require('autoprefixer'));
+          return postcssOptions;
+        },
+      };
+    },
+  ],
 };
 
 module.exports = config;

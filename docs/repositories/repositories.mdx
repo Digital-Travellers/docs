@@ -1,0 +1,42 @@
+---
+title: Repositories
+hide_title: true
+sidebar_positon: 3
+slug: /repositories
+---
+
+import { ItemList, H1 } from '@site/src/components';
+
+<H1 id="repositories" content="Repositories" />
+
+<Text>
+  Here you find the list of repositories, as well as all their information.
+</Text>
+
+<br />
+
+<ItemList
+  withSidebar
+  items={[
+    {
+      title: 'Documentation',
+      description: 'Documentation about the actual documentation',
+      to: '/docs/repositories/documentation',
+    },
+    {
+      title: 'Frontend - Web',
+      description: 'Repository for our frontend application (TBD)',
+      href: '/docs/repositories/front-end',
+    },
+    {
+      title: 'Backend - X',
+      description: 'Repository for our X backed application (TBD)',
+      href: '/docs/repositories/back-end-x',
+    },
+    {
+      title: 'Backend - Y',
+      description: 'Repository for our Y backed application (TBD)',
+      href: '/docs/repositories/back-end-y',
+    },
+  ]}
+/>

@@ -1,0 +1,237 @@
+---
+title: Working agreements
+hide_title: true
+slug: /working-agreements
+---
+
+import { H1, H2, H3, H4, H5, Text, Link } from '@site/src/components';
+const PROJECTS_URL = "https://github.com/digital-travellers/projects/2/views";
+
+<H1 id="header" content="Working agreements 🤝" />
+
+<Text>
+  Working agreements are a set of guidelines that a team agrees to follow in
+  order to work together effectively. Having well-defined working agreements is
+  particularly important for async and remote teams for the following reasons:
+</Text>
+
+1. <Text noMargin>
+  <strong>Establishes clear communication protocols</strong>: Working agreements
+  can help establish clear communication protocols, including expectations around
+  response time, communication tools, and channels. This can help ensure that
+  everyone is on the same page and knows how to communicate effectively with each
+  other.
+</Text>
+2. <Text noMargin>
+  <strong>Builds trust</strong>: Working agreements can help build trust among team
+  members by setting clear expectations and norms around how work is done. This can
+  help foster a sense of accountability and reliability among team members, which is
+  essential for remote and async teams where there is less opportunity for in-person
+  interactions.
+</Text>
+3. <Text noMargin>
+  <strong>Improves collaboration</strong>: Working agreements can help improve
+  collaboration by establishing clear roles and responsibilities, including
+  expectations aroun participation in meetings and decision-making processes. This can
+  help ensure that everyone is working towards the same goals and that there is no
+  confusion or duplication of efforts.
+</Text>
+4. <Text noMargin>
+  <strong>Increases productivity</strong>: Working agreements can help increase
+  productivity by reducing the time and effort spent on coordination and communication.
+  When everyone is on the same page and knows what is expected of them, work can
+  proceed more efficiently and effectively.
+</Text>
+
+<H2 id="communication"  content="Communication" />
+
+<Text>
+  It has been agreed to meet bi-weekly with our mentor (<code>@mangasf</code>)
+  through Google Meet. The meeting link will be sent in our discord channel
+  before starting the meeting. Additionally, the developers will meet regularly
+  in order to ensure a proper collaboration and that the project is progressing
+  as expected.
+  <br/>
+  In order to maximize the effectiveness of team meetings, it's important for all
+  developers to attend whenever possible. Additionally, if any deadlines or homework
+  are assigned prior to a meeting, developers should make every effort to meet those
+  requirements before the meeting takes place. This helps to ensure that the meeting
+  can be as productive and efficient as possible, and that everyone is fully
+  prepared to participate and contribute to the discussion.
+</Text>
+
+<H2 id="development" content="Development" />
+
+:::tip
+<Text>
+  First time hearing about GitHub projects? Make sure to read this official
+  guide: <Link href="https://docs.github.com/en/issues/planning-and-tracking-with-projects/learning-about-projects/quickstart-for-projects">
+  Official GitHub Projects Documentation</Link>
+</Text>
+:::
+
+<H3 id="one-project" content="One project to rule them all" />
+
+<Text>
+  To increase visibility into the progress of our project, we have made the
+  decision to create a single shared project that can be accessed by everyone
+  involved, from developers to mentors. This approach will allow for a clearer
+  and more comprehensive view of the project's progress, enabling all team
+  members to stay informed and up-to-date. By centralizing our project
+  management in this way, we can ensure that everyone is working towards the
+  same goals and has a better understanding of how their contributions fit into
+  the larger picture.
+  <br />
+</Text>
+
+:::info
+<Text>
+  You can find the project here: {' '}
+  <Link href="https://github.com/orgs/Digital-Travellers/projects/2/"><code>DTBoard</code></Link>
+</Text>
+:::
+
+<H4 id="project-views" content="Project views" />
+
+<Text>Here's an explanation for the different views:</Text>
+
+- <Text noMargin>
+  <Link href={`${PROJECTS_URL}/3`}>Board</Link>: This view contains a typical
+  scrum/kanban board. The goal of this view is to provide visibility to the
+  active tickets as well as those that are in the backlog. Regarding the
+  different colums, their are a reference to the status of the ticket, which is
+  explained more in depth in the next sections.
+</Text>
+- <Text noMargin>
+  <Link href={`${PROJECTS_URL}/1`}>Backlog</Link>: This view will contain a list
+  of the tickets that are in the backlog, giving more visibility to the tickets
+  that are yet to be done and not in the ready status.
+</Text>
+
+<H4 id="ticket-fields" content="Ticket fields" />
+
+<Text>
+  To improve the efficiency and clarity of our ticketing system, it's important
+  that all tickets are properly tagged with the corresponding labels. This ensures
+  that team members can quickly and easily understand the nature of each ticket,
+  without having to read through lengthy descriptions or search for relevant
+  information. By using clear and consistent labelling, we can streamline our
+  workflow and reduce the time and effort required to manage tickets. So be sure
+  to tag your tickets carefully and accurately to ensure that everyone has the
+  information they need to get the job done right.
+</Text>
+
+<H5 id="ticket-fields-status" content="Status" />
+
+<Text>
+  The status of a ticket is a quick and easy way to understand where a
+  particular task or issue stands in the overall workflow. It provides a clear
+  indication of whether the ticket is open or closed, in progress or waiting for
+  action, and so on.
+</Text>
+
+- <Text noMargin>
+  <strong>Backlog</strong>: Tickets awaiting priorization
+</Text>
+- <Text noMargin>
+  <strong>Ready</strong>: Tickets ready for work to begin
+</Text>
+- <Text noMargin>
+  <strong>In Progress</strong>: Ticket actively being worked on
+</Text>
+- <Text noMargin>
+  <strong>In review</strong>: Tickets awaiting review or approval
+</Text>
+- <Text noMargin>
+  <strong>Done</strong>: Task completed and closed
+</Text>
+
+<H5 id="ticket-fields-project" content="Project" />
+
+<Text>
+  The project field is none other than the repository in which the issue of the
+  ticket has been created. So, basically, we can understand a ticket as an issue
+  of a repository, which will later have a pull request and at some point in the
+  future it will be merged
+</Text>
+
+<H5 id="ticket-fields-priority" content="Priority" />
+
+<Text>
+  The priority label will help us organise and ensure that we, as a team, focus
+  on the same thing. Here's the list of the different priorities and their
+  meaning:
+</Text>
+
+1. <Text noMargin>
+  <strong>Urgent</strong>: Requires immediate attention, critical
+</Text>
+2. <Text noMargin>
+  <strong>High</strong>: Important, needs prompt attention
+</Text>
+3. <Text noMargin>
+  <strong>Medium</strong>: Requires attention, not urgent
+</Text>
+4. <Text noMargin>
+  <strong>Low</strong>: Not critical, can wait
+</Text>
+5. <Text noMargin>
+  <strong>Trivial</strong>: Very low priority, negligible impact.
+</Text>
+
+<H4 id="ticket-development" content="Ticket development" />
+
+1. <Text noMargin>
+  <strong>Ticket creation</strong>: A team member creates a new ticket in the
+  project, describing the task or issue that needs to be addressed. The ticket
+  will include a title, description, and any relevant details or attachments.
+</Text>
+2. <Text noMargin>
+  <strong>Ticket assignment</strong>: The ticket is assigned to a team member
+  who will be responsible for completing the task or resolving the issue.
+</Text>
+3. <Text noMargin>
+  <strong>Ticket status</strong>: The ticket is moved to the appropriate status
+  column on the project board, such as <code>Backlog</code>, <code>Ready</code>,
+  or <code>In Progress</code> to indicate its current status in the workflow.
+  Some automation can be done by GitHub Projects, but make sure it switches each
+  state properly.
+</Text>
+4. <Text noMargin>
+  <strong>Work on ticket</strong>: The team member assigned to the ticket begins
+  work on the task or issue, updating the ticket as needed with comments,
+  attachments, or other relevant information.
+</Text>
+5. <Text noMargin>
+  <strong>Pull requests</strong>: When the work on the ticket is complete, the
+  team member has to create a pull request (PR) to propose the changes or fixes
+  made to the codebase, tagging the entire team. The PR will reference the
+  original ticket, indicating that it is the solution to the problem described
+  in the ticket. It should also use the <code>Closes #issue-id</code> so that
+  the issue is automatically closed when the PR is merged. Here's more
+  <Link href="https://docs.github.com/en/issues/tracking-your-work-with-issues/linking-a-pull-request-to-an-issue">
+  information</Link>.
+</Text>
+6. <Text noMargin>
+  <strong>Review and approval</strong>: Other team members review the PR,
+  providing feedback, suggestions, and/or approval as appropriate. Once the PR
+  is approved, it is merged into the codebase, resolving the issue described in
+  the original ticket. It is important that no ticket is merged without at least
+  one approval.
+</Text>
+7. <Text noMargin>
+  <strong>Closing a ticket</strong>: The original ticket is closed, indicating
+  that the issue has been resolved and the task is complete.
+</Text>
+
+<H3 id="repositories" content="Repositories" />
+
+<Text>
+  Those who work in a repository will define the working agreements: from the
+  linting and formatting of the code, the merging strategy, the automation of
+  CI/CD tasks and so on. 
+  <br />
+  When a new repository is created, make sure to add update the documentation
+  accordingly. More information can be found in <Link to="/contributing">here
+  </Link>.
+</Text>

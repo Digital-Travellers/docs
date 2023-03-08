@@ -11,7 +11,7 @@ const config = {
   favicon: 'img/favicon.ico',
 
   url: 'https://digital-travellers.github.io',
-  baseUrl: '/',
+  baseUrl: '/rts-docs',
   // GitHub pages deployment config.
   organizationName: 'digital-travellers', // Usually your GitHub org/user name.
   projectName: 'docs', // Usually your repo name.
@@ -85,19 +85,6 @@ const config = {
               {
                 label: 'Home',
                 to: '/home',
-              },
-            ],
-          },
-          {
-            title: 'More',
-            items: [
-              {
-                label: 'Projects',
-                href: 'https://github.com/orgs/digital-travellers/projects',
-              },
-              {
-                label: 'GitHub',
-                href: 'https://github.com/facebook/docusaurus',
               },
             ],
           },

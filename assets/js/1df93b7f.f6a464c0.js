@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkdigital_travellers=self.webpackChunkdigital_travellers||[]).push([[237],{9754:(e,t,l)=>{l.r(t),l.d(t,{default:()=>r});var s=l(6550),a=l(7294);const r=()=>a.createElement(s.l_,{to:"/rts-docs/home"})}}]);

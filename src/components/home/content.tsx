@@ -1,8 +1,13 @@
-import { H1, H3, ItemList, Container, Link } from '@site/src/components/shared';
+import {
+  H1,
+  H3,
+  ItemList,
+  Container,
+  Text,
+  Link,
+} from '@site/src/components/shared';
 
 import React from 'react';
-
-import { Text } from '../shared/text';
 
 const TITLES = [
   'Where travel and documentation meet innovation!',

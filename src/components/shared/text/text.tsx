@@ -6,7 +6,7 @@ type BaseProps = {
 
 type TextProps = BaseProps &
   (
-    | { content: string; children?: never }
+    | { content: React.ReactNode; children?: never }
     | { content?: never; children: React.ReactNode }
   );
 

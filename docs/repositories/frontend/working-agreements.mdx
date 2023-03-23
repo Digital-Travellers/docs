@@ -1,0 +1,82 @@
+---
+title: Working agreements - Frontend 
+hide_title: true
+slug: /repositories/frontend/working-agreements
+---
+
+import { H1, H2, H3, Text } from '@site/src/components/shared';
+
+<H1 content="Working agreements" />
+
+<H2 content="Development" />
+
+<Text>
+  This repository uses semantic commits and <strong>are mandatory</strong>, as
+  they help in having a clearer vision of what has been modified.
+</Text>
+
+<H3 content="scopes" />
+
+| Scope         | Description                                        |
+| ------------- | -------------------------------------------------- |
+| site          | Changes related to the site application            |
+| site-e2e      | Changes related to the end-to-end site tests       |
+| build         | Changes related to the build process               |
+| test          | Changes related to the test scripts or environment |
+| core          | Changes related to the core functionality          |
+| context-`<name>`| Changes related to a project inside the context group with the name `<name>` |
+| ui-`<name>`     | Changes related to a project inside the ui group with the name `<name>` |
+
+:::caution Sub-projects
+
+<Text>
+  Note that the `name` placeholders in the context and ui scopes should be
+  replaced with the actual project name. Also, feel free to modify the
+  descriptions or add more scopes as needed for your specific project.
+</Text>
+
+:::
+
+<H3 content="Local development" />
+
+<Text>
+  It is recommended that you use <code>Volta</code> to manage your Node/npm/yarn
+  versions. Other node version managers are not supported. By using volta, you
+  will automatically be set with the pinned node and yarn version.
+</Text>
+
+<Text>
+  Another benefit of using <code>nx</code> is that it already provides many
+  commands to work with the different projects. Instead of writting all commands
+  in this documentation, make sure to check <code>nx</code>'s documentation. It
+  is also recommended that you install <code>nx</code> globally. This can be
+  done running: <code>volta install nx</code>.
+  <br />
+  Below are some examples:
+</Text>
+
+- <Text>
+  <code>nx run site:serve</code> - This will start the local development server
+  for the <code>site</code> project.
+</Text>
+- <Text>
+  <code>nx run site:lint</code> - Will run the linter in the <code>site</code>
+  {' '}project.
+</Text>
+- <Text>
+  <code>nx run-many --target=lint --parallel=3</code> - Will run the {' '}
+  <code>lint</code> command for all the projects that have a command named{' '}
+  <code>lint</code>, parallelising 3 jobs each time.
+</Text>
+- <Text>
+  <code>nx affected --target=test</code> - Will run the {' '}
+  <code>test</code> command for all the projects that have been modified and
+  have a <code>test</code> command defined.
+</Text>
+
+:::tip Nx caching
+<Text>
+  If you run the same command without changing the target project, nx will
+  return the cached result for that command.
+</Text>
+:::

@@ -50,9 +50,25 @@ const sidebars = {
           label: 'Documentation',
         },
         {
-          type: 'doc',
-          id: 'repositories/front-end',
-          label: 'Front-end',
+          type: 'category',
+          label: 'rts/frontend',
+          items: [
+            {
+              type: 'doc',
+              id: 'repositories/frontend/introduction',
+              label: 'Introduction',
+            },
+            {
+              type: 'doc',
+              id: 'repositories/frontend/working-agreements',
+              label: 'Working agreements',
+            },
+            {
+              type: 'doc',
+              id: 'repositories/frontend/project-structure',
+              label: 'Project structure',
+            },
+          ],
         },
         {
           type: 'doc',

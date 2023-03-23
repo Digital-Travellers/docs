@@ -1,0 +1,121 @@
+---
+title: Project structure - Frontend 
+hide_title: true
+slug: /repositories/frontend/project-structure
+---
+
+import { H1, H2, H3, H4, Text } from '@site/src/components/shared';
+
+<H1 content="Project structure" />
+
+<H2 content="Frontend as a monorepo" />
+
+<Text>
+  When thinking about the project structure for the frontend project, it has
+  been complex to define how to implement an Hexagonal Archictecture and DDD for
+  it. That is because the newer frontend frameworks have not been designed
+  taking into account this <strong>development</strong> patterns, rather
+  thinking more about the <strong>UI</strong>.
+</Text>
+
+<Text>
+    However, the project structure that has been decided mixes the patterns used
+  nowadays for frontend applications, hexagonal architecture and DDD. Basically,
+  the goal is to share an application core which is application independent.
+  This core will follow be developed in a DDD-style, in which each internal
+  module will follow an hexagonal architecture approach. This concepts are
+  explained in later sections.
+</Text>
+
+<Text>
+  Now, the core could be it's own single repository and later could be imported
+  as a package where it is needed. However, this would imply having to modify
+  different repositories at the same time for a ticket that would involve
+  changes in the core as well as in the ui application.
+  <br />
+  One of the goals is to also provide a better developer experience and having
+  to develop in two different repositories, waiting for packages to be posted
+  and then updating where they are needed, would not provide an enthusiastic
+  one.
+  <br />
+  Therefore, a monorepo approach would simplify most of these issues. Not only
+  that, but the TypeScript environment simplifies the maintenance of
+  monorepositories. Furtheremore, there are many tools that even improve the
+  developer experience of monorepos, one of them being Nx.
+  <br />
+  Nx is a build system that has first class support for monorepoesitories. Also,
+  it includes many functionalities that can improve and simplify the management
+  of the monorepo.
+</Text>
+
+<H2 content="Project structure" />
+
+<Text>
+  In this section, the different nx packages will be explained. Keep in mind
+  that there may be projects that have not been yet added!
+</Text>
+
+<H3 content="Context package" />
+
+<Text>
+  As explained previously, the context will be the core of our project. It will
+  follow a domain driven design, since it will allow us to separate easily the
+  different modules or domains. Then, each domain will be structured using an
+  hexagonal architecture schema, having the domain, application and
+  infrastructure layers.
+</Text>
+
+<Text>
+  Inside each module, we will have the three layers: domain, application and
+  infrastructure. It is important that each module follows the same patterns and
+  agreements:
+</Text>
+
+- <Text noMargin>
+  <strong>Domain layer</strong>: Will contain the <code>Value Objects</code>,
+  <code>Entities</code>, <code>Repositories</code> contracts... Each "group" of
+  classes or entities should be in their own folder. 
+</Text>
+- <Text noMargin>
+  <strong>Application layer</strong>: Will contain the <code>Use Cases</code>
+  from our <strong>module</strong>. There's no need to keep them in a single
+  folders, as most likely it will be a standalone file.
+</Text>
+- <Text noMargin>
+  <strong>Infrastructure layer</strong>: Will contain the concrete
+  implementation of the domain repositories. This implementations will most
+  likely be used to perform queries in the UI layer. Because of this fact,
+  inside the infra layer, each module will have a <code>querier</code> and a
+  <code>queries</code> folder. Inside the <code>queries</code>, the concrete
+  implementations of the repository for fetching/posting data will be defined;
+  while in the <code>querier</code> will be a <strong>functional module</strong>
+  {' '}that will provide the <em>queries</em> that will be used in the UI layer.
+</Text>
+
+<Text>
+  There may be many contexts inside the context package (i.e.
+  <code>auth</code>,{' '}<code>user</code> and so on).
+  <br/>
+  Below is a list of usefull commands for the project
+</Text>
+
+<H4 content="Generate a new context package" />
+
+```sh
+nx generate @nrwl/js:lib context/lib-name \
+  --bundler=esbuild \
+  --minimal \
+  --test-environment=node
+```
+
+<Text>
+  Replace <code>lib-name</code> with the context package that you want to
+  create. By using the given arguments, you will make sure to create the expected
+  package inside the context. 
+</Text>
+
+<H2 content="Site package" />
+
+:::danger TBD
+Under construction!
+:::
